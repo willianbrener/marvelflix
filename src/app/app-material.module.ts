@@ -13,6 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTabsModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule
   ],
   exports: [
     MatButtonModule,
@@ -45,7 +47,8 @@ import {MatDividerModule} from '@angular/material/divider';
     MatTabsModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatListModule
   ],
   declarations: [
   ]
