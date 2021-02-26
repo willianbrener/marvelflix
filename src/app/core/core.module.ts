@@ -1,24 +1,41 @@
+import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MediaMatcher } from '@angular/cdk/layout';
 
-import { AppMaterialModule } from '../app-material.module';
-import { FooterComponent } from '../shared/layout/footer/footer.component';
-import { HeaderComponent } from '../shared/layout/header/header.component';
+import { LoadingInterceptor } from './interceptors/loading.interceptor';
+import { GlobalErrorHandler } from './errors/globar-error.handler';
+import {AuthInterceptor} from './interceptors/auth-interceptor.service';
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    HeaderComponent
-  ],
   imports: [
-    AppMaterialModule,
     CommonModule,
-    FlexLayoutModule
+    HttpClientModule
+  ],
+  declarations: [
+  ],
+  providers: [
+    MediaMatcher,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    },
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    { provide: 'LOCALSTORAGE', useValue: window.localStorage }
   ],
   exports: [
-    FooterComponent,
-    HeaderComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule {
+  constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
+  }
+}

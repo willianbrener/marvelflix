@@ -1,9 +1,9 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { finalize, map } from 'rxjs/operators';
 
-import { Character } from '../../../core/character.model';
-import { Comic } from '../comic.model';
-import { ComicService } from '../comics.service';
+import { Character } from '../../../core/entities/character.model';
+import { Comic } from '../../../core/entities/comic.model';
+import { ComicService } from '../../../core/services/comics.service';
 
 @Component({
   selector: 'app-comic-list',

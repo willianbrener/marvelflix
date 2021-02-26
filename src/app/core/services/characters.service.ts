@@ -1,11 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 
-import { environment } from '../../../environments/environment';
-import { Character } from '../../core/character.model';
-import { ContextService } from '../../core/core.service';
+import {environment} from '../../../environments/environment';
+import {ContextService} from './core.service';
+import {Character} from '../entities/character';
 
 interface MarvelResponse {
   attributionText: string;

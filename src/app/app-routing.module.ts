@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
-import { CharacterListComponent } from './modules/characters/character-list/character-list.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: CharacterListComponent
+    loadChildren: './modules/characters/characters.module#CharacterModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'characters',
+    loadChildren: './modules/characters/characters.module#CharacterModule'
   }
 ];
 

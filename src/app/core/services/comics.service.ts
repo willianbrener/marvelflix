@@ -1,11 +1,11 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 
-import { environment } from '../../../environments/environment';
-import { ContextService } from '../../core/core.service';
-import { Comic } from './comic.model';
+import {environment} from '../../../environments/environment';
+import {ContextService} from './core.service';
+import {Comic} from '../entities/comic';
 
 @Injectable({
   providedIn: 'root'

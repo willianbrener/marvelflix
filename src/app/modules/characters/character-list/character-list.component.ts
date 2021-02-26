@@ -3,8 +3,8 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { EMPTY, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 
-import { Character } from '../../../core/character.model';
-import { CharacterService } from '../characters.service';
+import { Character } from '../../../core/entities/character.model';
+import { CharacterService } from '../../../core/services/characters.service';
 
 @Component({
   selector: 'app-character-list',

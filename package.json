@@ -1,9 +1,9 @@
 {
-  "name": "angular-heroes",
-  "version": "1.2.0",
+  "name": "marvelflix",
+  "version": "1.0.0",
   "description": "Marvelflix",
   "authors": [
-    "Aristeidis Bampakos"
+    "Willian Brener"
   ],
   "scripts": {
     "ng": "ng",
@@ -29,7 +29,8 @@
     "components-font-awesome": "5.9.0",
     "rxjs": "^6.5.4",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "moment": "^2.22.2"
   },
   "devDependencies": {
     "@angular-devkit/architect": "<0.900 || ^0.900.0-0 || ^9.0.0-0",

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { ContextService } from '../../../core/core.service';
-import { Comic } from '../comic.model';
+import { ContextService } from '../../../core/services/core.service';
+import { Comic } from '../../../core/entities/comic.model';
 
 @Component({
   selector: 'app-comic-detail',

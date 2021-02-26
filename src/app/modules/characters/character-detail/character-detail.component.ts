@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { Character } from '../../../core/character.model';
-import { ContextService } from '../../../core/core.service';
+import { Character } from '../../../core/entities/character.model';
+import { ContextService } from '../../../core/services/core.service';
 
 @Component({
   selector: 'app-character-detail',

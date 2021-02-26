@@ -1,19 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { AppMaterialModule } from '../../app-material.module';
 import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 import { ComicListComponent } from './comic-list/comic-list.component';
+import {SharedModule} from '../../shared/shared.module';
+import {ComicsRoutingModule} from './comics-routing.module';
 
 @NgModule({
+  declarations: [ComicDetailComponent, ComicListComponent],
   imports: [
-    AppMaterialModule,
-    CommonModule
+    CommonModule,
+    SharedModule,
+    ComicsRoutingModule
   ],
-  declarations: [
-    ComicDetailComponent,
-    ComicListComponent
-  ],
-  exports: [ComicListComponent]
 })
 export class ComicsModule {}

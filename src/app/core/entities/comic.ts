@@ -1,4 +1,4 @@
-import { Thumbnail } from '../../core/thumbnail.model';
+import {Thumbnail} from './thumbnail';
 
 export interface Comic {
   id: number;
