@@ -1,26 +1,20 @@
-import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MediaMatcher } from '@angular/cdk/layout';
+import {ErrorHandler, NgModule, Optional, SkipSelf} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {MediaMatcher} from '@angular/cdk/layout';
 
-import { LoadingInterceptor } from './interceptors/loading.interceptor';
-import { GlobalErrorHandler } from './errors/globar-error.handler';
+import {GlobalErrorHandler} from './errors/globar-error.handler';
 import {AuthInterceptor} from './interceptors/auth-interceptor.service';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   declarations: [
   ],
   providers: [
     MediaMatcher,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoadingInterceptor,
-      multi: true
-    },
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler
@@ -30,7 +24,7 @@ import {AuthInterceptor} from './interceptors/auth-interceptor.service';
       useClass: AuthInterceptor,
       multi: true
     },
-    { provide: 'LOCALSTORAGE', useValue: window.localStorage }
+    { provide: 'LOCALSTORAGE', useValue: window.localStorage },
   ],
   exports: [
   ]

@@ -1,5 +1,4 @@
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import {ErrorHandler, Injectable, Injector} from '@angular/core';
 import {environment} from '../../../environments/environment';
 
 
@@ -9,7 +8,6 @@ export class GlobalErrorHandler implements ErrorHandler {
     constructor(private injector: Injector) { }
 
     handleError(error: Error) {
-        this.injector.get(MatSnackBar).open(environment.settings.appErrorPrefix + error.message);
-        console.log(error);
+      console.log(environment.settings.appErrorPrefix + error.message);
     }
 }

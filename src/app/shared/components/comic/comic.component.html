@@ -1,0 +1,19 @@
+<div class="comic" (mouseenter)="playVideo()" (mouseleave)="stopVideo()">
+
+  <video #trailer [src]="'assets/videos/capitao_america_guerra_civil_320p.mp4'" controls muted="muted"></video>
+
+  <img [src]="comic.thumbnail.path +'.' + comic.thumbnail.extension " [alt]="" />
+
+  <div class="items">
+    <div class="left-side">
+      <button type="button" class="btn btn-play">
+        <i class="material-icons">play_arrow</i>
+      </button>
+      <button type="button" class="btn btn-muted" (click)="muteToggle()">
+        <i class="material-icons" *ngIf="areMuted()">volume_off</i>
+        <i class="material-icons" *ngIf="!areMuted()">volume_up</i>
+      </button>
+      <h2>{{ comic.title }}</h2>
+    </div>
+  </div>
+</div>

@@ -8,6 +8,9 @@ import {LocalDatePipe} from './pipes/local-date.pipe';
 import {YesNoPipe} from './pipes/yes-no.pipe';
 import {LayoutComponent} from './layout/layout.component';
 import {AppMaterialModule} from '../app-material.module';
+import {CommonModule} from '@angular/common';
+import {FooterComponent} from './layout/footer/footer.component';
+import {NavBarComponent} from './layout/nav-bar/nav-bar.component';
 
 @NgModule({
   imports: [
@@ -16,9 +19,12 @@ import {AppMaterialModule} from '../app-material.module';
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    CommonModule,
   ],
   declarations: [
     LayoutComponent,
+    NavBarComponent,
+    FooterComponent,
     LimitToPipe,
     LocalDatePipe,
     YesNoPipe,

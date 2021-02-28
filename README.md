@@ -1,24 +1,28 @@
 # Marvelflix
+Um aplicativo Angular(`Angular CLI 11`) que interage com a API da Marvel(http://developer.marvel.com/). O objetivo do aplicativo é demonstrar como aplicar técnicas angulares comuns à uma cópia da página principal do Netflix.
 
-An Angular application that uses Angular Material and interacts with the [Marvel Comics API](http://developer.marvel.com/). The purpose of the application is to demonstrate how to apply common Angular techniques and use some of the Angular Material components.
+É fornecida uma listagem comum de quadrinhos recuperasos da base de dados Marvel através da API.
 
-It provides a basic search engine over the characters and comics Marvel database. It allows to find a hero character and view information such as basic details and comics.
+O projeto foi estruturado da seguinte forma: Core, Modules e Shared. No "Core" estão contidos serviços, singletons, componentes universais e outros recursos em que há uma instância única. No "Modules" nós temos cada módulo do sistema e dentro de cada um deles nós temos os componentes compartilhados específicos e suas páginas. Na "Shared" é onde todos os componentes compartilhados, pipes e filters estão.
 
-## Setup
+## Configuração
+Acesse a pasta do projeto e execute o comando `npm install` para instalar todas as dependencias.
 
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
-
-## Usage
-
-Before you start, you must acquire a developer key from [Marvel Developer Portal](http://developer.marvel.com/). After you get one, 
-replace `apiKey` variable in `src/environments` files with the newly acquired **public** key.
+Antes de começar, você deve adquirir uma chave de desenvolvedor no potal da Marvel (http://developer.marvel.com/). Substitua a variável `apiKey` nos arquivos` src / environment` pela chave `` pública ``. Após feito isso, você deve obter a chave ``privada`` no portal, realizar uma encriptogração dos seguintes itens concatenados: ``ts, privateKey, publicKey``.
+Obs.: ``ts`` é o timestamp, ele pode ser utilizado com valor ``1``.
 
 ```
 export const environment = {
   ...
   apiEndpoint: '//gateway.marvel.com/v1/public/',
-  apiKey: '<Your public key here>'
+  apiKey: '<CHAVE PÚBLICA>',
+  ts: '<TIMESTAMP>',
+  hash: '<MD5(ts+CHAVE PRIVADA+CHAVE PÚBLICA)>',
+  ...
 };
 ```
+## Execução
+Execute dentro do projeto o comando `npm run start` ou `ng serve` para iniciar a aplicação. A aplicação ficará disponível em http://localhost:4200.
 
-Run `ng serve` to start the application. You will then be able to access it at http://localhost:4200
+## Produção
+Dentro da pasta do projeto, execute o comando `npm run production` e ficará disponível a distribuição de produção dentro da pasta ´dist´ do projeto.

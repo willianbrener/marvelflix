@@ -26,7 +26,6 @@ import {MatListModule} from '@angular/material/list';
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatSidenavModule,
-    MatSnackBarModule,
     MatTabsModule,
     MatToolbarModule,
     MatMenuModule,

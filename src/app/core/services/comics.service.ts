@@ -14,8 +14,9 @@ export class ComicService {
 
   constructor(private http: HttpClient, private contextService: ContextService) {}
 
-  getComics(characterId: number): Observable<Comic[]> {
-    return this.http.get<Comic[]>(`${environment.apiUrl}characters/${characterId}/comics`).pipe(
+  getComics(limit: string, offset: string): Observable<Comic[]> {
+    const url = `${environment.apiUrl}comics?format=comic&formatType=comic&orderBy=modified&limit=${limit}&offset=${offset}`;
+    return this.http.get<Comic[]>(url).pipe(
       map((response: any) => response.data.results),
       catchError(this.contextService.handleError)
     );

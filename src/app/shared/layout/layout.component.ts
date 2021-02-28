@@ -1,9 +1,5 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
-import {MediaMatcher} from '@angular/cdk/layout';
 import {BehaviorSubject} from 'rxjs';
-
-import {Router} from '@angular/router';
-import {LoadingService} from '../../core/services/loading.service';
 
 @Component({
     selector: 'app-layout',
@@ -12,34 +8,29 @@ import {LoadingService} from '../../core/services/loading.service';
 })
 export class LayoutComponent implements OnInit, OnDestroy, AfterViewInit {
 
-    mobileQuery: MediaQueryList;
-    showSpinner: boolean;
-    userName: string;
-    isAdmin: boolean;
+  menuOpened: boolean;
+  userName: string;
 
-    constructor(private changeDetectorRef: ChangeDetectorRef,
-                private media: MediaMatcher,
-                public loadingService: LoadingService,
-                private router: Router,
-                /*private authGuard: AuthGuard*/) {
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
 
-    }
+  }
 
-    ngOnInit(): void {
-    }
+  setMenuStage(state: boolean) {
+    this.menuOpened = state;
+  }
 
-    ngOnDestroy(): void {
-    }
+  closeMenu() {
+    this.menuOpened = false;
+  }
 
-    ngAfterViewInit(): void {
-        this.changeDetectorRef.detectChanges();
-    }
+  ngOnInit(): void {
+  }
 
-    logout() {
-        this.router.navigate(['/auth/login']);
-    }
+  ngOnDestroy(): void {
+  }
 
-    view(): BehaviorSubject<boolean> {
-        return this.loadingService.visibility;
-    }
+  ngAfterViewInit(): void {
+      this.changeDetectorRef.detectChanges();
+  }
+
 }
