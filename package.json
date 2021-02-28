@@ -5,11 +5,16 @@
   "authors": [
     "Willian Brener"
   ],
+  "engines": {
+    "node": "12.0.0",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "production": "ng build --prod",
+    "heroku-postbuild": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -29,12 +34,15 @@
     "@angular/router": "11.0.5",
     "bootstrap": "^4.4.1",
     "components-font-awesome": "5.9.0",
+    "express": "^4.17.1",
     "jquery": "^3.4.1",
     "moment": "^2.22.2",
     "ngx-toastr": "^13.2.0",
+    "path": "^0.12.7",
     "popper.js": "^1.16.1",
     "rxjs": "^6.5.4",
     "tslib": "^2.0.0",
+    "typescript": "~4.0.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
@@ -47,6 +55,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "enhanced-resolve": "^5.7.0",
     "fuzzy": "^0.1.3",
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
